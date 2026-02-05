@@ -1,0 +1,12 @@
+title: NRV Managed IT
+description: Managed IT & Cybersecurity for the New River Valley
+theme: minima
+
+markdown: kramdown
+
+header_pages:
+  - index.md
+  - services.md
+  - how-we-work.md
+  - free-it-health-check.md
+  - contact.md
