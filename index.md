@@ -2,32 +2,27 @@
 title: NRV Managed IT
 ---
 
-# Reliable Managed IT & Cybersecurity for the New River Valley
+<div class="hero">
+  <div class="hero-inner">
+    <img src="{{ '/assets/nrv-managed-it-logo.png' | relative_url }}"
+         alt="NRV Managed IT logo"
+         class="hero-logo" />
 
-Local, proactive IT support for small businesses and professional home offices.
+    <h1>Reliable Managed IT &amp; Cybersecurity for the New River Valley</h1>
 
-We help organizations reduce downtime, improve security, and keep technology running smoothly—without surprises.
+    <p class="hero-sub">
+      Local, proactive IT support for small businesses, churches,
+      private schools, nonprofits, and professional home offices.
+    </p>
 
----
+    <div class="hero-cta">
+      <a class="btn"
+         href="https://calendly.com/nrvmanagedit/30min"
+         target="_blank" rel="noopener">
+        Book a Free IT Health Check
+      </a>
 
-## What We Do
-
-- Managed IT & endpoint monitoring  
-- Automated patching and updates  
-- Advanced endpoint security and threat response  
-- Remote and on-site support  
-
----
-
-## Why NRV Managed IT
-
-- Locally owned and operated  
-- Flat-rate, predictable services  
-- Enterprise-grade tools  
-- Clear processes and documentation  
-
-We believe IT support should be structured, transparent, and easy to understand.
-
----
-
-👉 **[Book a Free IT Health Check](free-it-health-check.md)**
+      <a class="btn btn-outline"
+         href="tel:+15408353910">
+        Call (540) 835-3910
+      </a>
