@@ -1,26 +1,42 @@
 /* =========================================================
-   NRV Managed IT — Visual Polish
-   Theme: metallic / chain / fire / binary
-   Clean, professional, restrained
+   NRV Managed IT — Site Styling
+   Clean, professional, readable
    ========================================================= */
 
-/* Base background */
+/* ---------- Base page ---------- */
 body {
-  background: #f4f6fa;
-  color: #111827;
+  background-color: #eef1f4;   /* light gray background */
+  color: #111827;              /* near-black text */
+  font-family: -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* Main content card */
+/* ---------- Main content card ---------- */
 .page-content .wrapper {
-  background: #ffffff;
+  background-color: #ffffff;   /* white content area */
   padding: 2.5rem;
   border-radius: 12px;
-  box-shadow: 0 12px 32px rgba(0,0,0,.08);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
 }
 
-/* ---------------------------------
-   HERO SECTION
-----------------------------------*/
+/* ---------- Header ---------- */
+.site-header {
+  background: transparent;
+  border-top: none;
+  border-bottom: none;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Logo in header */
+.site-logo {
+  height: 48px;
+  width: auto;
+  vertical-align: middle;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));
+}
+
+/* ---------- Hero (home page) ---------- */
 .hero {
   margin-bottom: 2.5rem;
   border-radius: 16px;
@@ -34,20 +50,17 @@ body {
   text-align: center;
 }
 
-/* Logo */
 .hero-logo {
   max-width: 240px;
   margin-bottom: 1.5rem;
-  filter: drop-shadow(0 10px 22px rgba(0,0,0,.55));
+  filter: drop-shadow(0 10px 22px rgba(0,0,0,0.55));
 }
 
-/* Headline */
 .hero h1 {
   margin-bottom: 0.75rem;
   letter-spacing: -0.025em;
 }
 
-/* Subheadline */
 .hero-sub {
   max-width: 760px;
   margin: 0 auto 1.75rem auto;
@@ -55,69 +68,62 @@ body {
   opacity: 0.92;
 }
 
-/* ---------------------------------
-   BUTTONS
-----------------------------------*/
+/* ---------- Buttons ---------- */
 .btn {
   display: inline-block;
   padding: 0.75rem 1.2rem;
   border-radius: 12px;
   text-decoration: none !important;
   font-weight: 600;
-  background: #e5e7eb;
+  background-color: #e5e7eb;
   color: #0b1e2d !important;
   margin: 0 0.4rem;
   transition: all 0.15s ease-in-out;
 }
 
 .btn:hover {
-  background: #ffffff;
+  background-color: #ffffff;
   transform: translateY(-1px);
 }
 
-/* Outline button */
 .btn-outline {
   background: transparent;
-  border: 1px solid rgba(255,255,255,.55);
+  border: 1px solid rgba(255,255,255,0.55);
   color: #ffffff !important;
 }
 
 .btn-outline:hover {
-  background: rgba(255,255,255,.15);
+  background: rgba(255,255,255,0.15);
 }
 
-/* ---------------------------------
-   HEADINGS
-----------------------------------*/
+/* ---------- Headings ---------- */
+h1, h2, h3 {
+  letter-spacing: -0.015em;
+}
+
 h2 {
   margin-top: 2.25rem;
-  letter-spacing: -0.015em;
 }
 
 h3 {
   margin-top: 1.75rem;
 }
 
-/* ---------------------------------
-   LINKS
-----------------------------------*/
+/* ---------- Links ---------- */
 a {
   text-underline-offset: 3px;
 }
 
-/* ---------------------------------
-   FOOTER (Minima default tweak)
-----------------------------------*/
+/* ---------- Footer ---------- */
 .site-footer {
   margin-top: 3rem;
   font-size: 0.9rem;
   opacity: 0.85;
 }
 
-/* ---------------------------------
-   MOBILE TUNING
-----------------------------------*/
+/* ---------- Mobile tuning ---------- */
 @media (max-width: 640px) {
+
   .page-content .wrapper {
     padding: 1.75rem;
   }
@@ -129,4 +135,5 @@ a {
   .hero-logo {
     max-width: 200px;
   }
+
 }

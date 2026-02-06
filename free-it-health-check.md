@@ -1,9 +1,6 @@
 ---
 title: Free IT Health Check
 ---
-
-# Free IT Health Check
-
 The Free IT Health Check is a no-cost, no-obligation review of your current IT and security posture. It’s designed to help organizations understand risks, gaps, and opportunities before problems turn into disruptions.
 
 This service is available to small businesses, churches, private schools, nonprofits, and professional offices throughout the New River Valley.

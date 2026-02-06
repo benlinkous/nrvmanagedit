@@ -1,9 +1,6 @@
 ---
 title: Services
 ---
-
-# Services
-
 NRV Managed IT provides dependable IT and cybersecurity services for organizations that need reliable, secure technology without the overhead of a full internal IT department.
 
 We support small businesses, churches, private schools, nonprofits, and professional offices throughout the New River Valley.
