@@ -4,3 +4,5 @@ keypair.pub
 *.pem
 *.key
 .obsidian/
+.obsidian/
+.trash/
