@@ -92,5 +92,18 @@ It is designed to provide **reliable IT support without surprises**.
 
 If you’re unsure how many endpoints you have or whether managed IT is a good fit, we’re happy to talk it through.
 
-🗓️ **Schedule an initial consultation:**  
-https://calendly.com/nrvmanagedit/it-initial-consultation
+...page content...
+
+---
+
+## Schedule Next Steps
+
+<a class="btn" href="https://calendly.com/nrvmanagedit/it-initial-consultation" target="_blank" rel="noopener">
+  Schedule an Initial Consultation
+</a>
+
+<a class="btn btn-outline" href="https://calendly.com/nrvmanagedit/30min" target="_blank" rel="noopener">
+  Schedule a Free IT Health Check
+</a>
+
+

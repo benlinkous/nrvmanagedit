@@ -49,5 +49,20 @@ We work with organizations that rely on technology but may not have dedicated in
 
 NRV Managed IT is operated by **Ben Linkous** and serves the New River Valley.
 
+...page content...
+
+---
+
+## Schedule Next Steps
+
+<a class="btn" href="https://calendly.com/nrvmanagedit/it-initial-consultation" target="_blank" rel="noopener">
+  Schedule an Initial Consultation
+</a>
+
+<a class="btn btn-outline" href="https://calendly.com/nrvmanagedit/30min" target="_blank" rel="noopener">
+  Schedule a Free IT Health Check
+</a>
+
+
 📞 **(540) 835-3910**  
-🗓️ **[Schedule a Free Consultation](https://calendly.com/nrvmanagedit/30min)**
+

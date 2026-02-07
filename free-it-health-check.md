@@ -21,6 +21,10 @@ A no-cost, no-obligation review designed to help you understand risks, gaps, and
 
 <hr />
 
+...page content...
+
+---
+
 ## Schedule Next Steps
 
 <a class="btn" href="https://calendly.com/nrvmanagedit/it-initial-consultation" target="_blank" rel="noopener">
@@ -28,8 +32,9 @@ A no-cost, no-obligation review designed to help you understand risks, gaps, and
 </a>
 
 <a class="btn btn-outline" href="https://calendly.com/nrvmanagedit/30min" target="_blank" rel="noopener">
-  Book an IT Audit
+  Schedule a Free IT Health Check
 </a>
+
 
 <p style="margin-top:1rem;">
 Questions? Call <a href="tel:+15408353910">(540) 835-3910</a>.

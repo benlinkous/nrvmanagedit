@@ -14,13 +14,16 @@ A structured review of your technology and security posture—designed to provid
 - Network/Wi-Fi observations (high level)  
 - Priority recommendations and next actions  
 
-## Book an IT Audit
+...page content...
 
-<a class="btn" href="https://calendly.com/nrvmanagedit/30min" target="_blank" rel="noopener">
-  Book an IT Audit
+---
+
+## Schedule Next Steps
+
+<a class="btn" href="https://calendly.com/nrvmanagedit/it-initial-consultation" target="_blank" rel="noopener">
+  Schedule an Initial Consultation
 </a>
 
-<p style="margin-top:1rem;">
-Prefer to start with a shorter call?  
-<a href="https://calendly.com/nrvmanagedit/it-initial-consultation" target="_blank" rel="noopener">Schedule an initial consultation</a>.
-</p>
+<a class="btn btn-outline" href="https://calendly.com/nrvmanagedit/30min" target="_blank" rel="noopener">
+  Schedule a Free IT Health Check
+</a>
