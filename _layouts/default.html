@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
   {% include head.html %}
+  <head>
+    <!-- Force dark CSS with cache-buster -->
+    <link rel="stylesheet" href="{{ '/assets/dark.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+  </head>
   <body>
     {% include header.html %}
     <main class="page-content" aria-label="Content">

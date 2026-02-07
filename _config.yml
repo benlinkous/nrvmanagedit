@@ -11,3 +11,10 @@ header_pages:
   - it-audit.md
   - free-it-health-check.md
   - contact.md
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+

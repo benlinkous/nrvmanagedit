@@ -1,0 +1,27 @@
+/* NRV Managed IT - Forced Dark Mode */
+html, body {
+  background: #05070d !important;
+  color: #e5e7eb !important;
+}
+
+.page-content .wrapper {
+  background: #0b1220 !important;
+  color: #e5e7eb !important;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 22px 60px rgba(0,0,0,0.55);
+}
+
+a { color: #60a5fa !important; }
+a:hover { color: #93c5fd !important; }
+
+.site-title, .site-nav .page-link { color: #e5e7eb !important; }
+.site-header, .site-footer { background: transparent !important; border: none !important; }
+
+pre, code {
+  background: rgba(255,255,255,0.06) !important;
+  color: #e5e7eb !important;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 10px;
+}
