@@ -65,9 +65,16 @@ Our services are designed to scale as your organization grows.
   Schedule a Free IT Health Check
 </a>
 
-Questions? Call Ben directly at:  
-📞 [**(540) 835-3910**](tel:+15408353910)  
+<div class="contact-block">
+  <p><strong>Questions? Call or Email Ben directly at:  </strong></p>
 
-or email at:  
-✉️ [benlinkous@nrvmanagedit.com](mailto:benlinkous@nrvmanagedit.com)
+  <p>
+    📞 <a href="tel:+15408353910">(540) 835-3910</a>
+  </p>
+
+  <p>
+    ✉️ <a href="mailto:benlinkous@nrvmanagedit.com">benlinkous@nrvmanagedit.com</a>
+  </p>
+</div>
+
 
