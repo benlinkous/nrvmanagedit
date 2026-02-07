@@ -59,10 +59,10 @@ NRV Managed IT is operated by **Ben Linkous** and serves the New River Valley.
   Schedule a Free IT Health Check
 </a>
 
+Questions? Call Ben directly at:  
+📞 [**(540) 835-3910**](tel:+15408353910)  
 
-Questions?  Call Ben directly at:
-📞 **(540) 835-3910**  
+or email at:  
+✉️ [benlinkous@nrvmanagedit.com](mailto:benlinkous@nrvmanagedit.com)
 
-or email at:
-benlinkous@nrvmanagedit.com
 

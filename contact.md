@@ -30,8 +30,8 @@ NRV Managed IT works with small businesses, churches, private schools, nonprofit
   Schedule a Free IT Health Check
 </a>
 
-Questions?  Call Ben directly at:
-📞 **(540) 835-3910**  
+Questions? Call Ben directly at:  
+📞 [**(540) 835-3910**](tel:+15408353910)  
 
-or email at:
-benlinkous@nrvmanagedit.com
+or email at:  
+✉️ [benlinkous@nrvmanagedit.com](mailto:benlinkous@nrvmanagedit.com)
