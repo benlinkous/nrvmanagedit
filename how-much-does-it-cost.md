@@ -4,8 +4,6 @@ description: Clear, predictable pricing for managed IT services.
 tags: [pricing, managed-it, cost]
 ---
 
-## How Much Does It Cost?
-
 NRV Managed IT uses a **simple, predictable pricing model** based on the number of devices we manage.
 
 **Cost:**  
