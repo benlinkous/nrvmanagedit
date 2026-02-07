@@ -55,3 +55,16 @@ The easiest way to get started is to schedule online.
 
 If you prefer, you can also call **(540) 835-3910** to ask questions or schedule directly.
 
+
+<hr />
+
+<h2>Ready to Talk?</h2>
+
+<p>
+If you’d like help reviewing the results of your IT Health Check,
+you can schedule a free 30-minute consultation.
+</p>
+
+<a class="btn" href="https://calendly.com/nrvmanagedit/30min" target="_blank" rel="noopener">
+  Schedule a Free Consultation
+</a>
