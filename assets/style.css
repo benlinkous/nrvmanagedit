@@ -191,3 +191,34 @@ pre {
 .site-nav .trigger::-webkit-scrollbar {
   height: 6px;
 }
+
+/* Contact block (consistent + readable on dark theme) */
+.contact-block{
+  margin-top: 2rem;
+  padding: 1.25rem 1.25rem;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 14px;
+  background: rgba(255,255,255,.04);
+}
+
+.contact-block h2{
+  margin-top: 0;
+}
+
+.contact-block a{
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.contact-block a:hover{
+  opacity: .9;
+}
+
+/* Ensure links are readable site-wide on dark background */
+a, a:visited{
+  color: rgba(255,255,255,.92);
+}
+a:hover{
+  color: rgba(255,255,255,1);
+}
