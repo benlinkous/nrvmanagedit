@@ -147,3 +147,26 @@ pre, code {
     fill: #e5e7eb !important;
   }
 }
+
+/* =========================================================
+   Fix white hamburger box (mobile)
+   ========================================================= */
+@media (max-width: 600px) {
+  /* Hamburger button */
+  .site-nav label[for="nav-trigger"] {
+    background: rgba(11, 18, 32, 0.85) !important;
+    border: 1px solid rgba(255,255,255,0.18) !important;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.55);
+  }
+
+  /* Remove Minima hover white flash */
+  .site-nav label[for="nav-trigger"]:hover {
+    background: rgba(11, 18, 32, 0.95) !important;
+  }
+
+  /* Make sure hamburger lines are visible */
+  .site-nav .menu-icon svg path {
+    fill: #e5e7eb !important;
+  }
+}
