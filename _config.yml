@@ -2,19 +2,12 @@ title: NRV Managed IT
 description: Managed IT & Cybersecurity for the New River Valley
 theme: minima
 
-markdown: kramdown
-
 header_pages:
-  - index.md
   - services.md
   - how-we-work.md
   - it-audit.md
   - free-it-health-check.md
+  - how-much-does-it-cost.md
+  - why-managed-it.md
+  - who-we-are.md
   - contact.md
-
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: default
-
