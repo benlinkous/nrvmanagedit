@@ -58,10 +58,6 @@ NRV Managed IT is proud to serve the **New River Valley**, supporting local orga
 
 ## Contact
 
-...page content...
-
----
-
 ## Schedule Next Steps
 
 <a class="btn" href="https://calendly.com/nrvmanagedit/it-initial-consultation" target="_blank" rel="noopener">
@@ -72,6 +68,9 @@ NRV Managed IT is proud to serve the **New River Valley**, supporting local orga
   Schedule a Free IT Health Check
 </a>
 
-
+Questions?  Call Ben directly at:
 📞 **(540) 835-3910**  
+
+or email at:
+benlinkous@nrvmanagedit.com
 

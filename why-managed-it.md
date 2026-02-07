@@ -101,10 +101,6 @@ Organizations choose NRV Managed IT because they want:
 
 Our role is to make technology **stable, secure, and supportive**—so you can focus on what matters most.
 
-...page content...
-
----
-
 ## Schedule Next Steps
 
 <a class="btn" href="https://calendly.com/nrvmanagedit/it-initial-consultation" target="_blank" rel="noopener">
@@ -114,4 +110,10 @@ Our role is to make technology **stable, secure, and supportive**—so you can f
 <a class="btn btn-outline" href="https://calendly.com/nrvmanagedit/30min" target="_blank" rel="noopener">
   Schedule a Free IT Health Check
 </a>
+
+Questions?  Call Ben directly at:
+📞 **(540) 835-3910**  
+
+or email at:
+benlinkous@nrvmanagedit.com
 

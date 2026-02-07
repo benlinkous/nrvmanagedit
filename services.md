@@ -55,12 +55,6 @@ NRV Managed IT emphasizes:
 
 Our services are designed to scale as your organization grows.
 
----
-
-...page content...
-
----
-
 ## Schedule Next Steps
 
 <a class="btn" href="https://calendly.com/nrvmanagedit/it-initial-consultation" target="_blank" rel="noopener">
@@ -71,4 +65,8 @@ Our services are designed to scale as your organization grows.
   Schedule a Free IT Health Check
 </a>
 
-Questions? Call **(540) 835-3910**
+Questions?  Call Ben directly at:
+📞 **(540) 835-3910**  
+
+or email at:
+benlinkous@nrvmanagedit.com

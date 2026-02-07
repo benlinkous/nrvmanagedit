@@ -2,7 +2,6 @@
 title: Free IT Health Check
 layout: default
 ---
-
 # Free IT Health Check
 
 A no-cost, no-obligation review designed to help you understand risks, gaps, and opportunities before issues become disruptions.
@@ -19,12 +18,6 @@ A no-cost, no-obligation review designed to help you understand risks, gaps, and
 - Identified risks and areas of concern  
 - Practical, prioritized recommendations  
 
-<hr />
-
-...page content...
-
----
-
 ## Schedule Next Steps
 
 <a class="btn" href="https://calendly.com/nrvmanagedit/it-initial-consultation" target="_blank" rel="noopener">
@@ -35,7 +28,8 @@ A no-cost, no-obligation review designed to help you understand risks, gaps, and
   Schedule a Free IT Health Check
 </a>
 
+Questions?  Call Ben directly at:
+📞 **(540) 835-3910**  
 
-<p style="margin-top:1rem;">
-Questions? Call <a href="tel:+15408353910">(540) 835-3910</a>.
-</p>
+or email at:
+benlinkous@nrvmanagedit.com

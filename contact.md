@@ -20,10 +20,6 @@ New River Valley and Southwestern Virginia
 
 NRV Managed IT works with small businesses, churches, private schools, nonprofits, and professional offices that value reliability, security, and clear communication.
 
-...page content...
-
----
-
 ## Schedule Next Steps
 
 <a class="btn" href="https://calendly.com/nrvmanagedit/it-initial-consultation" target="_blank" rel="noopener">
@@ -34,3 +30,8 @@ NRV Managed IT works with small businesses, churches, private schools, nonprofit
   Schedule a Free IT Health Check
 </a>
 
+Questions?  Call Ben directly at:
+📞 **(540) 835-3910**  
+
+or email at:
+benlinkous@nrvmanagedit.com
