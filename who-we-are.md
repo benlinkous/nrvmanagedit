@@ -4,8 +4,6 @@ description: Who we are, how we work, and the people behind NRV Managed IT.
 tags: [about, who-we-are, nrv-managed-it]
 ---
 
-## Who We Are
-
 **NRV Managed IT** is a locally focused managed service provider serving the New River Valley. We provide proactive, security-focused IT support designed for organizations that rely on technology but may not have dedicated in-house IT staff.
 
 Our work centers on reliability, security, and clear communication—helping organizations keep their systems running smoothly while reducing risk and disruption.
