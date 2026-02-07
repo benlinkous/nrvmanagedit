@@ -1,70 +1,36 @@
 ---
 title: Free IT Health Check
----
-The Free IT Health Check is a no-cost, no-obligation review of your current IT and security posture. It’s designed to help organizations understand risks, gaps, and opportunities before problems turn into disruptions.
-
-This service is available to small businesses, churches, private schools, nonprofits, and professional offices throughout the New River Valley.
-
+layout: default
 ---
 
-## What We Review
+# Free IT Health Check
 
-During the IT Health Check, we take a high-level look at:
+A no-cost, no-obligation review designed to help you understand risks, gaps, and opportunities before issues become disruptions.
 
+## What we review
 - Devices and operating systems  
 - Patch and update status  
 - Endpoint security coverage  
 - Backup and recovery awareness  
-- Basic network and Wi-Fi configuration  
+- Basic network and Wi-Fi observations  
 
-The goal is to identify common issues that can impact reliability or security.
-
----
-
-## What You Receive
-
-After the review, you receive:
-
-- A plain-English summary of findings  
+## What you receive
+- Plain-English summary of findings  
 - Identified risks and areas of concern  
 - Practical, prioritized recommendations  
 
-There is no obligation to move forward with services. The intent is to provide clarity and informed next steps.
-
----
-
-## What This Is (and Is Not)
-
-**This is:**
-- A professional, introductory assessment  
-- Focused on awareness and risk reduction  
-- Tailored to your organization’s environment  
-
-**This is not:**
-- A sales pitch  
-- A full compliance or penetration assessment  
-- A disruptive or intrusive process  
-
----
-
-## Schedule Your IT Health Check
-
-The easiest way to get started is to schedule online.
-
-👉 **[Schedule Your Free IT Health Check](https://calendly.com/YOUR-LINK-HERE)**  
-
-If you prefer, you can also call **(540) 835-3910** to ask questions or schedule directly.
-
-
 <hr />
 
-<h2>Ready to Talk?</h2>
+## Schedule Next Steps
 
-<p>
-If you’d like help reviewing the results of your IT Health Check,
-you can schedule a free 30-minute consultation.
-</p>
-
-<a class="btn" href="https://calendly.com/nrvmanagedit/30min" target="_blank" rel="noopener">
-  Schedule a Free Consultation
+<a class="btn" href="https://calendly.com/nrvmanagedit/it-initial-consultation" target="_blank" rel="noopener">
+  Schedule an Initial Consultation
 </a>
+
+<a class="btn btn-outline" href="https://calendly.com/nrvmanagedit/30min" target="_blank" rel="noopener">
+  Book an IT Audit
+</a>
+
+<p style="margin-top:1rem;">
+Questions? Call <a href="tel:+15408353910">(540) 835-3910</a>.
+</p>

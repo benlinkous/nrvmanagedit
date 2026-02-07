@@ -11,15 +11,16 @@ title: NRV Managed IT
       churches, private schools, nonprofits, and professional home offices.
     </p>
 
-    <a class="btn" href="https://calendly.com/nrvmanagedit/30min" target="_blank" rel="noopener">
-      Schedule a Free Consultation
+    <a class="btn" href="{{ '/it-audit' | relative_url }}">
+      Book an IT Audit
     </a>
 
-    <a class="btn btn-outline" href="{{ '/free-it-health-check' | relative_url }}">
-      Free IT Health Check
+    <a class="btn btn-outline" href="https://calendly.com/nrvmanagedit/it-initial-consultation" target="_blank" rel="noopener">
+      Schedule an Initial Consultation
     </a>
   </div>
 </div>
+
 
 ## What We Do
 
