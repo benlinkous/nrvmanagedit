@@ -90,3 +90,60 @@ pre, code {
   border: 1px solid rgba(255,255,255,0.10);
   border-radius: 10px;
 }
+
+/* =========================================================
+   Mobile Nav Fix (Minima)
+   ========================================================= */
+@media (max-width: 600px) {
+  /* Ensure nav sits above hero/logo */
+  .site-nav {
+    position: relative;
+    z-index: 9999;
+  }
+
+  /* Menu icon background so it’s visible */
+  .site-nav label[for="nav-trigger"] {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    padding: 10px 12px;
+  }
+
+  /* Dropdown panel (the white box you're seeing) */
+  .site-nav .trigger {
+    background: rgba(11, 18, 32, 0.98) !important; /* dark panel */
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    box-shadow: 0 24px 70px rgba(0,0,0,0.65);
+
+    padding: 14px 14px;
+    margin-top: 10px;
+
+    /* make it feel anchored to the top-right */
+    position: absolute;
+    right: 0;
+    top: 52px;
+
+    min-width: 240px;
+  }
+
+  /* Make links readable */
+  .site-nav .trigger .page-link {
+    color: #e5e7eb !important;
+    opacity: 1 !important;
+    display: block;
+    padding: 10px 10px;
+    border-radius: 10px;
+    text-decoration: none !important;
+  }
+
+  .site-nav .trigger .page-link:hover {
+    background: rgba(255,255,255,0.08);
+    text-decoration: none !important;
+  }
+
+  /* Make sure the hamburger icon lines are bright */
+  .site-nav .menu-icon svg path {
+    fill: #e5e7eb !important;
+  }
+}
