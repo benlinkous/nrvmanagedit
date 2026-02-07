@@ -1,5 +1,3 @@
-# Contact NRV Managed IT
-
 If you’re interested in learning more or would like to discuss your organization’s technology needs, the easiest way to get started is to schedule a consultation.
 
 ---

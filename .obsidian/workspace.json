@@ -4,39 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "ff8260e58853d6e1",
+        "id": "3dccd16e02649aee",
         "type": "tabs",
         "children": [
           {
-            "id": "0761f199a91e716e",
+            "id": "9b16f6ec75bae13e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "contact.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "contact"
-            }
-          },
-          {
-            "id": "5ff5e5502e6e373a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "services.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "services"
+              "title": "New tab"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -198,14 +179,22 @@
       "bases:Create new base": false
     }
   },
-  "active": "5ff5e5502e6e373a",
+  "active": "9b16f6ec75bae13e",
   "lastOpenFiles": [
+    "assets/style.css",
     "assets/style.css.md",
-    "how-we-work.md",
+    "_includes/default.html.md",
+    "_layouts/default.html",
+    "_includes/header.html",
+    "_layouts",
+    "_includes/header.html.md",
+    "contact.md",
     "services.md",
     "index.md",
+    "how-we-work.md",
     "free-it-health-check.md",
-    "contact.md",
+    "Untitled.md",
+    "_includes",
     "CNAME",
     "assets/nrv-managed-it-logo.png",
     "assets"

@@ -1,7 +1,6 @@
 ---
 title: How We Work
 ---
-
 NRV Managed IT follows a structured, repeatable process to deliver reliable IT support and cybersecurity. Our goal is to provide clarity, consistency, and trust at every stage of the relationship.
 
 ---
