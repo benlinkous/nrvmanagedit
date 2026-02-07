@@ -168,3 +168,26 @@ pre {
   .page-content .wrapper { padding: 1.75rem !important; }
   .hero-inner { padding: 2.25rem 1.25rem; }
 }
+
+/* Force top nav to stay one line (scrolls horizontally on small screens) */
+.site-nav .trigger {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 14px;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 6px;
+}
+
+.site-nav .page-link {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 0.95rem;
+  padding: 6px 0;
+}
+
+/* Hide scrollbar where possible (optional polish) */
+.site-nav .trigger::-webkit-scrollbar {
+  height: 6px;
+}

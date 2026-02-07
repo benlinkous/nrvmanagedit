@@ -4,10 +4,9 @@ theme: minima
 
 header_pages:
   - services.md
-  - how-we-work.md
+  - how-much-does-it-cost.md
   - it-audit.md
   - free-it-health-check.md
-  - how-much-does-it-cost.md
-  - why-managed-it.md
+  - how-we-work.md
   - who-we-are.md
   - contact.md
