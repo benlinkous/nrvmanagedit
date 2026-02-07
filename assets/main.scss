@@ -1,0 +1,92 @@
+---
+---
+
+@import "minima";
+
+/* =========================================================
+   NRV Managed IT — Dark by Default Overrides
+   (This compiles into /assets/main.css)
+   ========================================================= */
+
+:root {
+  --bg: #05070d;
+  --card: #0b1220;
+  --text: #e5e7eb;
+  --muted: #a7b0c0;
+  --border: rgba(255,255,255,0.12);
+  --accent: #60a5fa;
+  --accent2: #93c5fd;
+}
+
+html, body {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+.page-content .wrapper {
+  background: var(--card) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 22px 60px rgba(0,0,0,0.55);
+}
+
+h1, h2, h3, h4, h5, h6,
+p, li, .post-meta, .rss-subscribe {
+  color: var(--text) !important;
+}
+
+a {
+  color: var(--accent) !important;
+}
+a:hover {
+  color: var(--accent2) !important;
+}
+
+.site-header, .site-footer {
+  background: transparent !important;
+  border: none !important;
+}
+
+.site-title, .site-nav .page-link, .footer-heading {
+  color: var(--text) !important;
+}
+
+.site-nav .page-link:hover {
+  text-decoration: underline;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+/* Buttons you created */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.25rem;
+  border-radius: 12px;
+  font-weight: 700;
+  background: #e5e7eb;
+  color: #05070d !important;
+  text-decoration: none !important;
+  margin: 0 0.45rem;
+}
+
+.btn-outline {
+  background: transparent !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.55);
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,0.14) !important;
+}
+
+/* Code blocks */
+pre, code {
+  background: rgba(255,255,255,0.06) !important;
+  color: var(--text) !important;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 10px;
+}
