@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zero Trust — Free Identity Check</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --black: #060810; --dark: #0D1117; --dark2: #161B27; --border: #1E2A3A;
+    --accent: #00D4FF; --green: #00E676; --amber: #FFB300; --red: #FF4444;
+    --white: #F0F4F8; --muted: #8B9AB5; --text: #C8D8E8;
+  }
+  body { font-family: 'Space Grotesk', sans-serif; background: var(--black); color: var(--text); min-height: 100vh; }
+
+  nav {
+    background: rgba(6,8,16,0.95); backdrop-filter: blur(12px);
+    padding: 18px 40px; display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100;
+  }
+  .logo { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; color: var(--white); }
+  .logo span { color: var(--accent); }
+  .nav-right { margin-left: auto; display: flex; gap: 16px; align-items: center; }
+  .nav-link { font-size: 13px; color: var(--muted); text-decoration: none; }
+  .nav-cta { background: var(--accent); color: var(--black); padding: 8px 20px; border-radius: 6px; font-size: 13px; font-weight: 700; text-decoration: none; }
+
+  .hero {
+    padding: 80px 24px 60px; text-align: center; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0,212,255,0.1) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-image: linear-gradient(rgba(0,212,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.02) 1px, transparent 1px);
+    background-size: 60px 60px; pointer-events: none;
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(0,230,118,0.08); border: 1px solid rgba(0,230,118,0.25);
+    color: var(--green); padding: 6px 16px; border-radius: 20px;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 24px;
+    position: relative; z-index: 1;
+  }
+  .live-dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,230,118,0.4)} 50%{opacity:0.7;box-shadow:0 0 0 6px rgba(0,230,118,0)} }
+
+  h1 { font-family: 'Syne', sans-serif; font-size: clamp(32px,5vw,60px); font-weight: 800; color: var(--white); line-height: 1.05; margin-bottom: 16px; letter-spacing: -0.02em; position: relative; z-index: 1; }
+  h1 .hl { color: transparent; background: linear-gradient(135deg, var(--accent), #60E0FF); -webkit-background-clip: text; background-clip: text; }
+  .hero-sub { font-size: 17px; color: var(--muted); max-width: 480px; margin: 0 auto 48px; line-height: 1.7; position: relative; z-index: 1; }
+
+  /* SEARCH BOX */
+  .search-container { max-width: 620px; margin: 0 auto; position: relative; z-index: 1; }
+
+  .search-type-tabs { display: flex; gap: 4px; margin-bottom: 12px; background: var(--dark2); padding: 4px; border-radius: 10px; border: 1px solid var(--border); }
+  .type-tab { flex: 1; padding: 8px; border-radius: 7px; font-size: 13px; font-weight: 600; cursor: pointer; color: var(--muted); transition: all 0.2s; text-align: center; border: none; background: none; font-family: 'Space Grotesk', sans-serif; }
+  .type-tab.active { background: var(--dark); color: var(--white); }
+
+  .search-box {
+    background: var(--dark2); border: 1px solid var(--border); border-radius: 12px;
+    padding: 6px 6px 6px 20px; display: flex; align-items: center; gap: 12px;
+    transition: border-color 0.2s;
+  }
+  .search-box:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0,212,255,0.1); }
+  .search-icon { font-size: 18px; flex-shrink: 0; }
+  .search-input {
+    flex: 1; background: none; border: none; outline: none; font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px; color: var(--white); padding: 10px 0;
+  }
+  .search-input::placeholder { color: #3A4A5A; }
+  .search-btn {
+    background: var(--accent); color: var(--black); border: none; border-radius: 8px;
+    padding: 14px 28px; font-family: 'Space Grotesk', sans-serif; font-size: 14px;
+    font-weight: 700; cursor: pointer; transition: all 0.2s; white-space: nowrap;
+  }
+  .search-btn:hover { background: #33DDFF; }
+  .search-btn:disabled { background: var(--border); color: var(--muted); cursor: not-allowed; }
+
+  .search-note { font-size: 12px; color: var(--muted); margin-top: 10px; text-align: center; }
+
+  /* LOADING */
+  .loading { display: none; text-align: center; padding: 60px 24px; }
+  .loading.active { display: block; }
+  .loading-steps { max-width: 320px; margin: 0 auto; }
+  .loading-step { display: flex; align-items: center; gap: 12px; padding: 10px 0; font-size: 14px; color: var(--muted); }
+  .loading-step.active { color: var(--accent); }
+  .loading-step.done { color: var(--green); }
+  .step-spinner { width: 16px; height: 16px; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; flex-shrink: 0; }
+  .step-check { width: 16px; height: 16px; background: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--black); font-weight: 800; flex-shrink: 0; }
+  .step-wait { width: 16px; height: 16px; background: var(--border); border-radius: 50%; flex-shrink: 0; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* RESULTS */
+  .results { display: none; max-width: 680px; margin: 40px auto; padding: 0 24px; }
+  .results.active { display: block; }
+
+  /* VERDICT */
+  .verdict-card {
+    border-radius: 16px; padding: 28px; margin-bottom: 20px;
+    border: 1px solid; position: relative; overflow: hidden;
+  }
+  .verdict-low { background: rgba(0,230,118,0.05); border-color: rgba(0,230,118,0.3); }
+  .verdict-medium { background: rgba(255,179,0,0.05); border-color: rgba(255,179,0,0.3); }
+  .verdict-high { background: rgba(255,68,68,0.05); border-color: rgba(255,68,68,0.3); }
+
+  .verdict-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; }
+  .verdict-label { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase; margin-bottom: 6px; }
+  .verdict-title { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 800; }
+  .verdict-low .verdict-title { color: var(--green); }
+  .verdict-medium .verdict-title { color: var(--amber); }
+  .verdict-high .verdict-title { color: var(--red); }
+
+  .risk-badge { padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 800; letter-spacing: 0.1em; }
+  .badge-low { background: rgba(0,230,118,0.15); color: var(--green); }
+  .badge-medium { background: rgba(255,179,0,0.15); color: var(--amber); }
+  .badge-high { background: rgba(255,68,68,0.15); color: var(--red); }
+
+  .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+  .stat-box { background: rgba(0,0,0,0.2); border-radius: 10px; padding: 14px; text-align: center; }
+  .stat-num { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 800; color: var(--white); }
+  .stat-label { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  /* SIGNALS */
+  .signals { margin-bottom: 20px; }
+  .signal-item {
+    display: flex; align-items: center; gap: 10px; padding: 10px 14px;
+    background: rgba(0,0,0,0.2); border-radius: 8px; margin-bottom: 8px; font-size: 13px;
+  }
+  .signal-icon { font-size: 16px; flex-shrink: 0; }
+
+  /* TEASER LIST */
+  .teaser-list { margin-bottom: 20px; }
+  .teaser-item {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 14px; background: rgba(0,0,0,0.2); border-radius: 8px;
+    margin-bottom: 6px; font-size: 13px;
+  }
+  .teaser-item .platform { color: var(--text); }
+  .teaser-item .found-badge { color: var(--green); font-size: 11px; font-weight: 700; }
+
+  .teaser-hidden {
+    padding: 14px; background: rgba(0,0,0,0.3); border: 1px dashed var(--border);
+    border-radius: 8px; text-align: center; font-size: 13px; color: var(--muted);
+  }
+  .teaser-hidden strong { color: var(--amber); }
+
+  /* UPGRADE BOX */
+  .upgrade-box {
+    background: linear-gradient(135deg, #0D1E35, #0A1525);
+    border: 1px solid rgba(0,212,255,0.3); border-radius: 16px; padding: 28px;
+    text-align: center; margin-top: 24px;
+  }
+  .upgrade-title { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; color: var(--white); margin-bottom: 8px; }
+  .upgrade-sub { font-size: 14px; color: var(--muted); margin-bottom: 24px; line-height: 1.6; }
+
+  .tier-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px; }
+  .tier-option { padding: 14px 10px; border-radius: 10px; border: 1px solid var(--border); cursor: pointer; transition: all 0.2s; text-align: center; }
+  .tier-option:hover { border-color: var(--accent); }
+  .tier-option.selected { border-color: var(--accent); background: rgba(0,212,255,0.08); }
+  .tier-price { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; color: var(--white); }
+  .tier-name { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .tier-time { font-size: 10px; color: var(--accent); margin-top: 4px; }
+
+  .email-input {
+    width: 100%; background: var(--dark); border: 1px solid var(--border); border-radius: 8px;
+    padding: 14px 16px; color: var(--white); font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px; outline: none; margin-bottom: 12px; transition: border-color 0.2s;
+  }
+  .email-input:focus { border-color: var(--accent); }
+  .email-input::placeholder { color: #3A4A5A; }
+
+  .order-btn {
+    width: 100%; background: var(--accent); color: var(--black); border: none;
+    border-radius: 8px; padding: 16px; font-family: 'Space Grotesk', sans-serif;
+    font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.2s;
+  }
+  .order-btn:hover { background: #33DDFF; transform: translateY(-1px); }
+
+  .secure-note { font-size: 11px; color: var(--muted); margin-top: 10px; }
+
+  /* ORDER SUCCESS */
+  .order-success { display: none; text-align: center; padding: 32px; }
+  .order-success.active { display: block; }
+  .success-icon { font-size: 48px; margin-bottom: 16px; }
+  .success-title { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 800; color: var(--green); margin-bottom: 8px; }
+  .success-sub { font-size: 14px; color: var(--muted); line-height: 1.7; }
+  .order-id { display: inline-block; background: var(--dark2); border: 1px solid var(--border); border-radius: 6px; padding: 6px 14px; font-size: 12px; color: var(--accent); margin-top: 12px; font-family: monospace; }
+
+  /* TRUST BAR */
+  .trust-bar { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; padding: 24px; border-top: 1px solid var(--border); margin-top: 60px; }
+  .trust-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
+
+  /* ERROR */
+  .error-box { background: rgba(255,68,68,0.08); border: 1px solid rgba(255,68,68,0.3); border-radius: 10px; padding: 16px 20px; color: var(--red); font-size: 14px; margin-bottom: 16px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div style="width:28px;height:28px;background:linear-gradient(135deg,#0088CC,#00D4FF);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;">🔍</div>
+  <div class="logo">Zero<span>Trust</span></div>
+  <div class="nav-right">
+    <a href="#" class="nav-link">How It Works</a>
+    <a href="#" class="nav-link">Pricing</a>
+    <a href="#" class="nav-cta">Full Reports →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge"><span class="live-dot"></span> FREE INSTANT CHECK — NO ACCOUNT NEEDED</div>
+  <h1>Is Someone <span class="hl">Hiding</span><br>Something From You?</h1>
+  <p class="hero-sub">Run a free identity check in seconds. See what we find before deciding if you need the full report.</p>
+
+  <!-- SEARCH -->
+  <div class="search-container">
+    <div class="search-type-tabs">
+      <button class="type-tab active" onclick="setType('username')">👤 Username</button>
+      <button class="type-tab" onclick="setType('email')">✉️ Email</button>
+      <button class="type-tab" onclick="setType('name')">🔤 Full Name</button>
+    </div>
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" class="search-input" id="search-input"
+        placeholder="Enter username to search..."
+        onkeydown="if(event.key==='Enter') runSearch()" />
+      <button class="search-btn" id="search-btn" onclick="runSearch()">Search Free →</button>
+    </div>
+    <p class="search-note">🔒 Completely confidential — the subject will never know you searched</p>
+  </div>
+</div>
+
+<!-- LOADING -->
+<div class="loading" id="loading">
+  <div class="loading-steps" id="loading-steps">
+    <div class="loading-step" id="step-1">
+      <div class="step-spinner"></div>
+      <span>Searching 400+ platforms...</span>
+    </div>
+    <div class="loading-step" id="step-2">
+      <div class="step-wait"></div>
+      <span>Checking dating apps...</span>
+    </div>
+    <div class="loading-step" id="step-3">
+      <div class="step-wait"></div>
+      <span>Analyzing digital footprint...</span>
+    </div>
+    <div class="loading-step" id="step-4">
+      <div class="step-wait"></div>
+      <span>Generating preview...</span>
+    </div>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div class="results" id="results">
+  <div id="error-container"></div>
+  <div id="result-content"></div>
+  <div class="order-success" id="order-success">
+    <div class="success-icon">✅</div>
+    <div class="success-title">Order Received!</div>
+    <div class="success-sub">Your full report is being prepared. You'll receive it at the email you provided within the timeframe selected.<br><br>Check your inbox — including spam folder.</div>
+    <div class="order-id" id="order-id-display"></div>
+  </div>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">🔒 100% Confidential</div>
+  <div class="trust-item">⚡ Results in seconds</div>
+  <div class="trust-item">🌐 400+ platforms searched</div>
+  <div class="trust-item">📋 No account required</div>
+  <div class="trust-item">✅ Public data only</div>
+</div>
+
+<script>
+let currentType = 'username';
+let currentQuery = '';
+let selectedTier = 'standard';
+
+const placeholders = {
+  username: 'Enter username to search...',
+  email: 'Enter email address...',
+  name: 'Enter full name...'
+};
+
+const tierPrices = { basic: 49, standard: 99, premium: 199 };
+const tierTimes = { basic: '48hr', standard: '24hr', premium: 'Same day' };
+
+function setType(type) {
+  currentType = type;
+  document.querySelectorAll('.type-tab').forEach((t, i) => {
+    t.classList.toggle('active', ['username', 'email', 'name'][i] === type);
+  });
+  document.getElementById('search-input').placeholder = placeholders[type];
+  document.getElementById('search-input').focus();
+}
+
+async function runSearch() {
+  const query = document.getElementById('search-input').value.trim();
+  if (!query) return;
+
+  currentQuery = query;
+
+  // Show loading
+  document.getElementById('loading').classList.add('active');
+  document.getElementById('results').classList.remove('active');
+  document.getElementById('search-btn').disabled = true;
+  document.getElementById('order-success').classList.remove('active');
+
+  // Animate loading steps
+  animateLoadingSteps();
+
+  try {
+    const response = await fetch('/api/teaser', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query, type: currentType })
+    });
+
+    const data = await response.json();
+
+    // Small delay for UX
+    await new Promise(r => setTimeout(r, 500));
+
+    document.getElementById('loading').classList.remove('active');
+    document.getElementById('results').classList.add('active');
+    document.getElementById('search-btn').disabled = false;
+
+    renderResults(data);
+
+  } catch (err) {
+    document.getElementById('loading').classList.remove('active');
+    document.getElementById('results').classList.add('active');
+    document.getElementById('search-btn').disabled = false;
+    document.getElementById('error-container').innerHTML = `
+      <div class="error-box">⚠️ Search error: ${err.message}. Make sure the backend is running.</div>
+    `;
+  }
+}
+
+function animateLoadingSteps() {
+  const steps = ['step-1', 'step-2', 'step-3', 'step-4'];
+  steps.forEach((id, i) => {
+    setTimeout(() => {
+      // Mark previous as done
+      if (i > 0) {
+        const prev = document.getElementById(steps[i-1]);
+        prev.classList.remove('active');
+        prev.classList.add('done');
+        prev.querySelector('div').outerHTML = '<div class="step-check">✓</div>';
+        // re-query after DOM update
+      }
+      const el = document.getElementById(id);
+      el.classList.add('active');
+      const indicator = el.querySelector('div');
+      if (indicator) indicator.className = 'step-spinner';
+    }, i * 800);
+  });
+}
+
+function renderResults(data) {
+  document.getElementById('error-container').innerHTML = '';
+
+  if (!data.summary) {
+    document.getElementById('result-content').innerHTML = `
+      <div class="error-box">No results found for "${data.query}". Try a different username or search type.</div>
+      ${renderUpgradeBox(data.query, 0, 'LOW')}
+    `;
+    return;
+  }
+
+  const s = data.summary;
+  const risk = s.risk_level || 'LOW';
+  const riskClass = risk.toLowerCase();
+
+  let signalsHtml = '';
+  if (s.risk_signals && s.risk_signals.length > 0) {
+    signalsHtml = s.risk_signals.map(sig => `
+      <div class="signal-item">
+        <span class="signal-icon">${sig.includes('dating') ? '❤️' : sig.includes('Minimal') ? '⚠️' : '📊'}</span>
+        <span>${sig}</span>
+      </div>
+    `).join('');
+  }
+
+  let platformsHtml = '';
+  if (s.sample_platforms && s.sample_platforms.length > 0) {
+    platformsHtml = s.sample_platforms.map(p => `
+      <div class="teaser-item">
+        <span class="platform">🌐 ${p}</span>
+        <span class="found-badge">● FOUND</span>
+      </div>
+    `).join('');
+  }
+
+  let hiddenHtml = '';
+  if (s.hidden_count > 0) {
+    hiddenHtml = `
+      <div class="teaser-hidden">
+        <strong>+${s.hidden_count} more platforms found</strong> — upgrade to see all results including dating apps
+      </div>
+    `;
+  }
+
+  document.getElementById('result-content').innerHTML = `
+    <div class="verdict-card verdict-${riskClass}">
+      <div class="verdict-header">
+        <div>
+          <div class="verdict-label">Free Scan Result for "${data.query}"</div>
+          <div class="verdict-title">${
+            risk === 'HIGH' ? '🚨 High Risk Indicators Found' :
+            risk === 'MEDIUM' ? '⚠️ Activity Detected' :
+            '✓ Limited Activity Found'
+          }</div>
+        </div>
+        <div class="risk-badge badge-${riskClass}">${risk} RISK</div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-box">
+          <div class="stat-num">${s.platforms_found || 0}</div>
+          <div class="stat-label">Platforms Found</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num" style="color:${s.dating_platforms > 0 ? 'var(--red)' : 'var(--green)'}">${s.dating_platforms || 0}</div>
+          <div class="stat-label">Dating Apps</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">400+</div>
+          <div class="stat-label">Sites Searched</div>
+        </div>
+      </div>
+
+      ${signalsHtml ? `<div class="signals">${signalsHtml}</div>` : ''}
+
+      ${platformsHtml ? `<div class="teaser-list">${platformsHtml}</div>` : ''}
+      ${hiddenHtml}
+    </div>
+
+    ${renderUpgradeBox(data.query, s.dating_platforms, risk)}
+  `;
+}
+
+function renderUpgradeBox(query, datingCount, risk) {
+  const urgency = datingCount > 0
+    ? `We found dating app activity. The full report reveals exactly which platforms, profile details, and photos.`
+    : risk === 'HIGH'
+    ? `Multiple risk indicators detected. The full report provides complete details and analyst verdict.`
+    : `Get the complete picture with photo verification, location analysis, and a professional analyst summary.`;
+
+  return `
+    <div class="upgrade-box" id="upgrade-box">
+      <div class="upgrade-title">Get the Full Report</div>
+      <div class="upgrade-sub">${urgency}</div>
+
+      <div class="tier-options">
+        <div class="tier-option" onclick="selectTier('basic')">
+          <div class="tier-price">$49</div>
+          <div class="tier-name">Basic</div>
+          <div class="tier-time">48hr</div>
+        </div>
+        <div class="tier-option selected" onclick="selectTier('standard')">
+          <div class="tier-price">$99</div>
+          <div class="tier-name">Full Report</div>
+          <div class="tier-time">24hr ⭐</div>
+        </div>
+        <div class="tier-option" onclick="selectTier('premium')">
+          <div class="tier-price">$199</div>
+          <div class="tier-name">Deep Dive</div>
+          <div class="tier-time">Same day</div>
+        </div>
+      </div>
+
+      <input type="email" class="email-input" id="order-email" placeholder="Your email address — report delivered here" />
+      <button class="order-btn" onclick="placeOrder()">
+        Get Full Report for $<span id="order-price">99</span> →
+      </button>
+      <div class="secure-note">🔒 Secure order · Confidential · Delivered to your email</div>
+    </div>
+  `;
+}
+
+function selectTier(tier) {
+  selectedTier = tier;
+  document.querySelectorAll('.tier-option').forEach((el, i) => {
+    el.classList.toggle('selected', ['basic','standard','premium'][i] === tier);
+  });
+  document.getElementById('order-price').textContent = tierPrices[tier];
+}
+
+async function placeOrder() {
+  const email = document.getElementById('order-email').value.trim();
+  if (!email || !email.includes('@')) {
+    alert('Please enter a valid email address');
+    return;
+  }
+
+  try {
+    const response = await fetch('/api/order', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        query: currentQuery,
+        type: currentType,
+        tier: selectedTier,
+        email: email
+      })
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      document.getElementById('upgrade-box').style.display = 'none';
+      document.getElementById('order-success').classList.add('active');
+      document.getElementById('order-id-display').textContent = `Order ID: ${data.order_id}`;
+    }
+  } catch (err) {
+    alert('Order error — please try again or contact us directly.');
+  }
+}
+</script>
+</body>
+</html>

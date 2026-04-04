@@ -1,44 +1,39 @@
-If you’re interested in learning more or would like to discuss your organization’s technology needs, the easiest way to get started is to schedule a consultation.
-
+---
+title: Contact
+label: Get in Touch
+subtitle: No ticket systems, no call centers. You reach Ben directly.
+layout: page
 ---
 
-## Get Started
-
-👉 **[Book a Free IT Health Check](free-it-health-check.md)**
-
----
-
-## Contact Information
-
-**Phone:** [ (540) 835-3910 ](tel:+15408353910)  
-**Email:** benlinkous@nrvmanagedit.com
-
-**Service Area:**  
-New River Valley and Southwestern Virginia
-
----
-
-NRV Managed IT works with small businesses, churches, private schools, nonprofits, and professional offices that value reliability, security, and clear communication.
-
-## Schedule Next Steps
-
-<a class="btn" href="https://calendly.com/nrvmanagedit/it-initial-consultation" target="_blank" rel="noopener">
-  Schedule an Initial Consultation
-</a>
-
-<a class="btn btn-outline" href="https://calendly.com/nrvmanagedit/30min" target="_blank" rel="noopener">
-  Schedule a Free IT Health Check
-</a>
-
-<div class="contact-block">
-  <p><strong>Questions? Call or Email Ben directly at:  </strong></p>
-
-  <p>
-    📞 <a href="tel:+15408353910">(540) 835-3910</a>
-  </p>
-
-  <p>
-    ✉️ <a href="mailto:benlinkous@nrvmanagedit.com">benlinkous@nrvmanagedit.com</a>
-  </p>
+<div class="p-card-grid">
+  <div class="p-card">
+    <span class="p-card-icon">📞</span>
+    <h3>Call or Text</h3>
+    <p><a href="tel:+15408353910">(540) 835-3910</a></p>
+  </div>
+  <div class="p-card">
+    <span class="p-card-icon">✉️</span>
+    <h3>Email</h3>
+    <p><a href="mailto:benlinkous@nrvmanagedit.com">benlinkous@nrvmanagedit.com</a></p>
+  </div>
+  <div class="p-card">
+    <span class="p-card-icon">📍</span>
+    <h3>Service Area</h3>
+    <p>New River Valley and Southwestern Virginia</p>
+  </div>
 </div>
 
+## Schedule Online
+
+The fastest way to get started is to book a time directly:
+
+<div class="p-actions" style="justify-content: flex-start; margin-top: 1rem;">
+  <a href="https://calendly.com/nrvmanagedit/it-initial-consultation" target="_blank" rel="noopener" class="btn-p">Schedule a Free Consultation</a>
+  <a href="https://calendly.com/nrvmanagedit/30min" target="_blank" rel="noopener" class="btn-o">Book a Free IT Health Check</a>
+</div>
+
+## What to Expect
+
+When you reach out, you'll hear back from Ben — not a call center, not an automated system. We'll have a straightforward conversation about your organization, your technology, and whether managed IT is a good fit.
+
+There's no pressure and no obligation. If we're not the right fit, we'll tell you.

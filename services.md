@@ -1,80 +1,66 @@
 ---
 title: Services
----
-NRV Managed IT provides dependable IT and cybersecurity services for organizations that need reliable, secure technology without the overhead of a full internal IT department.
-
-We support small businesses, churches, private schools, nonprofits, and professional offices throughout the New River Valley.
-
+label: What We Do
+subtitle: Proactive, security-focused IT support for organizations that rely on technology but don't have a dedicated IT department.
+layout: page
 ---
 
-## Managed IT Services
-
-Proactive monitoring and maintenance designed to reduce downtime and keep systems running smoothly.
-
-- Continuous endpoint monitoring  
-- Operating system and application patching  
-- Device health and performance oversight  
-- Asset awareness and lifecycle guidance  
-
-Our focus is on identifying and addressing issues before they impact daily operations.
-
----
-
-## Cybersecurity & Endpoint Protection
-
-Security services designed to protect systems, data, and users from modern threats.
-
-- Advanced antivirus and endpoint detection  
-- Ransomware and malware protection  
-- Threat monitoring and response  
-- Visibility into endpoint security posture  
-
-We prioritize practical, layered security that aligns with organizational needs and risk levels.
-
----
-
-## Support & Assistance
-
-Responsive support when issues arise, with an emphasis on clear communication and resolution.
-
-- Remote technical support  
-- On-site assistance when required  
-- Defined response expectations  
-- Business-focused problem resolution  
-
-Support is delivered with professionalism, discretion, and respect for your organization’s mission.
-
----
-
-## A Practical Approach
-
-NRV Managed IT emphasizes:
-- Prevention over reaction  
-- Documentation over guesswork  
-- Predictable service over surprise costs  
-
-Our services are designed to scale as your organization grows.
-
-## Schedule Next Steps
-
-<a class="btn" href="https://calendly.com/nrvmanagedit/it-initial-consultation" target="_blank" rel="noopener">
-  Schedule an Initial Consultation
-</a>
-
-<a class="btn btn-outline" href="https://calendly.com/nrvmanagedit/30min" target="_blank" rel="noopener">
-  Schedule a Free IT Health Check
-</a>
-
-<div class="contact-block">
-  <p><strong>Questions? Call or Email Ben directly at:  </strong></p>
-
-  <p>
-    📞 <a href="tel:+15408353910">(540) 835-3910</a>
-  </p>
-
-  <p>
-    ✉️ <a href="mailto:benlinkous@nrvmanagedit.com">benlinkous@nrvmanagedit.com</a>
-  </p>
+<div class="p-card-grid">
+  <div class="p-card">
+    <span class="p-card-icon">🖥️</span>
+    <h3>24/7 Endpoint Monitoring</h3>
+    <p>We watch your devices around the clock and address issues before they take you offline.</p>
+  </div>
+  <div class="p-card">
+    <span class="p-card-icon">🛡️</span>
+    <h3>Endpoint Security (EDR)</h3>
+    <p>Advanced antivirus, ransomware protection, and active threat response on every managed device.</p>
+  </div>
+  <div class="p-card">
+    <span class="p-card-icon">🔄</span>
+    <h3>Patch Management</h3>
+    <p>OS updates, security patches, and application updates — applied consistently before vulnerabilities are exploited.</p>
+  </div>
+  <div class="p-card">
+    <span class="p-card-icon">🛠️</span>
+    <h3>Remote & On-Site Support</h3>
+    <p>Up to 1 hour of remote support per endpoint per month, included. On-site when the situation demands it.</p>
+  </div>
+  <div class="p-card">
+    <span class="p-card-icon">📋</span>
+    <h3>IT Audit</h3>
+    <p>A structured review of your environment that surfaces risks and gives you a clear, prioritized action plan.</p>
+  </div>
+  <div class="p-card">
+    <span class="p-card-icon">🤝</span>
+    <h3>Direct Access to Ben</h3>
+    <p>You call or email Ben directly. No ticket queues, no offshore helpdesk, no runaround.</p>
+  </div>
 </div>
 
+## Our Approach
 
+Three principles guide every engagement:
+
+<ul class="p-checklist">
+  <li><span class="p-check">✓</span> <strong>Prevention over reaction</strong> — we fix problems before you experience them</li>
+  <li><span class="p-check">✓</span> <strong>Documentation over guesswork</strong> — your environment is understood and recorded</li>
+  <li><span class="p-check">✓</span> <strong>Predictable costs over surprise bills</strong> — flat monthly pricing, no emergencies</li>
+</ul>
+
+## Who We Support
+
+Small businesses, churches, private schools, nonprofits, and professional home offices throughout the New River Valley — organizations that rely on technology but don't need a full-time IT staff.
+
+<div class="p-cta">
+  <h2>Ready to stop reacting and start preventing?</h2>
+  <p>Schedule a free consultation and we'll talk through your environment, your risks, and whether managed IT is the right fit.</p>
+  <div class="p-actions">
+    <a href="https://calendly.com/nrvmanagedit/it-initial-consultation" target="_blank" rel="noopener" class="btn-p">Schedule a Free Consultation</a>
+    <a href="https://calendly.com/nrvmanagedit/30min" target="_blank" rel="noopener" class="btn-o">Book a Free IT Health Check</a>
+  </div>
+  <div class="p-contact-row">
+    <a href="tel:+15408353910" class="p-contact-link"><span class="p-contact-icon">📞</span> (540) 835-3910</a>
+    <a href="mailto:benlinkous@nrvmanagedit.com" class="p-contact-link"><span class="p-contact-icon">✉️</span> benlinkous@nrvmanagedit.com</a>
+  </div>
+</div>

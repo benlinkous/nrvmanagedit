@@ -1,107 +1,54 @@
 ---
 title: How We Work
----
-NRV Managed IT follows a structured, repeatable process to deliver reliable IT support and cybersecurity.  
-Our goal is to provide clarity, consistency, and trust at every stage of the relationship.
-
-Rather than reactive, break-fix support, we focus on proactive management, security, and long-term stability.
-
+label: Our Process
+subtitle: A clear, repeatable process — from first conversation to ongoing support.
+layout: page
 ---
 
-## 1. Initial Consultation
-
-We begin with a short conversation to understand your organization, current technology, and any concerns or challenges you are facing.
-
-This discussion helps determine:
-- Whether managed IT services are a good fit
-- What level of support may be appropriate
-- Immediate risks or gaps that should be addressed first
-
-There is no obligation — this is about alignment and transparency.
-
----
-
-## 2. IT Health Check
-
-If we move forward, we perform a baseline review of your technology environment.
-
-This typically includes:
-- Devices and endpoints
-- Operating system and patch status
-- Security posture and antivirus/EDR coverage
-- Backup and data protection practices
-- User access and basic configuration risks
-
-The goal is not to overwhelm, but to establish a clear starting point.
-
----
-
-## 3. Findings & Recommendations
-
-After the review, we provide clear, plain-language feedback outlining:
-- What is working well
-- Where risks or inefficiencies exist
-- Practical recommendations to improve stability and security
-
-We focus on **actionable steps**, not unnecessary complexity.
-
----
-
-## 4. Ongoing Managed IT Support
-
-For organizations that continue with managed services, we provide ongoing monitoring and support focused on prevention and fast response.
-
-This includes:
-- Continuous endpoint monitoring
-- Automated patching and updates
-- Cyber threat detection and response
-- Remote support for issues that can be resolved without a site visit
-- Clear communication and accountability
-
-Support is predictable, consistent, and aligned with your environment.
-
----
-
-## What Clients Can Expect
-
-- Direct communication and accountability  
-- Clear explanations of issues, risks, and recommendations  
-- Technology decisions aligned with organizational needs and budgets  
-- A long-term focus on stability, security, and continuity  
-
----
+<ul class="p-steps">
+  <li class="p-step">
+    <span class="p-step-num">1</span>
+    <div class="p-step-body">
+      <h3>Initial Consultation</h3>
+      <p>A short conversation to understand your organization, current technology, and any concerns you're facing. No obligation — this is about alignment and transparency.</p>
+    </div>
+  </li>
+  <li class="p-step">
+    <span class="p-step-num">2</span>
+    <div class="p-step-body">
+      <h3>IT Health Check</h3>
+      <p>A baseline review of your environment — devices, patch status, security posture, backup practices, and user access. The goal is a clear starting point, not an overwhelming report.</p>
+    </div>
+  </li>
+  <li class="p-step">
+    <span class="p-step-num">3</span>
+    <div class="p-step-body">
+      <h3>Findings & Recommendations</h3>
+      <p>Plain-language feedback on what's working, where risks exist, and practical next steps. We focus on actionable guidance, not unnecessary complexity.</p>
+    </div>
+  </li>
+  <li class="p-step">
+    <span class="p-step-num">4</span>
+    <div class="p-step-body">
+      <h3>Ongoing Managed IT Support</h3>
+      <p>Continuous monitoring, automated patching, endpoint security, and responsive support — delivered consistently and predictably every month.</p>
+    </div>
+  </li>
+</ul>
 
 ## Who This Works Best For
 
-This model is especially effective for:
-- Small and growing businesses
-- Churches and faith-based organizations
-- Private schools and educational programs
-- Nonprofits and community organizations
-- Professional and home offices
+Organizations that value trust, consistency, and proactive IT benefit most from this model — particularly small businesses, churches, private schools, nonprofits, and professional offices that don't have dedicated internal IT staff.
 
-Organizations that value trust, consistency, and proactive support benefit most from managed IT.
-
-## Schedule Next Steps
-
-<a class="btn" href="https://calendly.com/nrvmanagedit/it-initial-consultation" target="_blank" rel="noopener">
-  Schedule an Initial Consultation
-</a>
-
-<a class="btn btn-outline" href="https://calendly.com/nrvmanagedit/30min" target="_blank" rel="noopener">
-  Schedule a Free IT Health Check
-</a>
-
-<div class="contact-block">
-  <p><strong>Questions? Call or Email Ben directly at:  </strong></p>
-
-  <p>
-    📞 <a href="tel:+15408353910">(540) 835-3910</a>
-  </p>
-
-  <p>
-    ✉️ <a href="mailto:benlinkous@nrvmanagedit.com">benlinkous@nrvmanagedit.com</a>
-  </p>
+<div class="p-cta">
+  <h2>Start with step one — it's free.</h2>
+  <p>The initial consultation costs nothing and commits you to nothing. It's just a conversation.</p>
+  <div class="p-actions">
+    <a href="https://calendly.com/nrvmanagedit/it-initial-consultation" target="_blank" rel="noopener" class="btn-p">Schedule a Free Consultation</a>
+    <a href="https://calendly.com/nrvmanagedit/30min" target="_blank" rel="noopener" class="btn-o">Book a Free IT Health Check</a>
+  </div>
+  <div class="p-contact-row">
+    <a href="tel:+15408353910" class="p-contact-link"><span class="p-contact-icon">📞</span> (540) 835-3910</a>
+    <a href="mailto:benlinkous@nrvmanagedit.com" class="p-contact-link"><span class="p-contact-icon">✉️</span> benlinkous@nrvmanagedit.com</a>
+  </div>
 </div>
-
-

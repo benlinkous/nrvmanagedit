@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{ page.description | default: site.description }}" />
+  <title>{{ page.title }} — NRV Managed IT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #06080f;
+      --surface:      #0d1117;
+      --surface2:     #111827;
+      --border:       rgba(255,255,255,0.07);
+      --border2:      rgba(255,255,255,0.13);
+      --text:         #f0f4ff;
+      --muted:        #8b97b0;
+      --accent:       #3b82f6;
+      --accent-glow:  rgba(59,130,246,0.15);
+      --accent-light: #93c5fd;
+      --green:        #22c55e;
+      --green-dim:    rgba(34,197,94,0.12);
+    }
+
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    a { color: var(--accent-light); text-decoration: none; transition: color 0.15s; }
+    a:hover { color: var(--text); }
+
+    /* ── NAV ───────────────────────────────────────────────── */
+    .l-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 2rem;
+      border-bottom: 1px solid var(--border);
+      background: rgba(6,8,15,0.94);
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .l-nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .l-nav-logo span { color: var(--accent-light); }
+    .l-nav-logo:hover { color: var(--text); }
+
+    .l-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.6rem;
+      list-style: none;
+    }
+
+    .l-nav-links a {
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+
+    .l-nav-links a:hover { color: var(--text); }
+
+    .l-nav-links a.active { color: var(--text); }
+
+    .l-nav-cta {
+      background: var(--accent) !important;
+      color: #fff !important;
+      padding: 0.5rem 1.1rem !important;
+      border-radius: 8px;
+      font-weight: 500 !important;
+      transition: opacity 0.15s;
+    }
+
+    .l-nav-cta:hover { opacity: 0.87 !important; color: #fff !important; }
+
+    .l-nav-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--border2);
+      border-radius: 8px;
+      padding: 0.45rem 0.6rem;
+      cursor: pointer;
+    }
+
+    .l-nav-toggle span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: var(--text);
+      margin: 3px 0;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 680px) {
+      .l-nav-toggle { display: block; }
+      .l-nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0; right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        background: rgba(10,13,22,0.98);
+        border-bottom: 1px solid var(--border);
+        padding: 1rem 1.5rem;
+      }
+      .l-nav-links.open { display: flex; }
+      .l-nav-links li { width: 100%; padding: 0.6rem 0; border-bottom: 1px solid var(--border); }
+      .l-nav-links li:last-child { border-bottom: none; }
+      .l-nav-links a { font-size: 1rem; }
+    }
+
+    /* ── PAGE HEADER ───────────────────────────────────────── */
+    .p-header {
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 2rem 2.5rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .p-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    .p-header h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+
+    .p-header-sub {
+      color: var(--muted);
+      font-weight: 300;
+      font-size: 1.05rem;
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    /* ── CONTENT ───────────────────────────────────────────── */
+    .p-content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3rem 2rem 4rem;
+    }
+
+    .p-content h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin: 2.5rem 0 0.75rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .p-content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+
+    .p-content h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .p-content p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    .p-content strong { color: var(--text); font-weight: 500; }
+
+    .p-content ul, .p-content ol {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .p-content li {
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    .p-content hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    /* ── CARD GRID (for services etc) ──────────────────────── */
+    .p-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .p-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.4rem;
+      transition: border-color 0.2s;
+    }
+
+    .p-card:hover { border-color: rgba(59,130,246,0.35); }
+
+    .p-card-icon {
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .p-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 0.4rem;
+    }
+
+    .p-card p {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* ── STEP LIST ─────────────────────────────────────────── */
+    .p-steps { list-style: none; padding: 0; margin: 1.5rem 0; }
+
+    .p-step {
+      display: flex;
+      gap: 1.25rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .p-step:last-child { border-bottom: none; }
+
+    .p-step-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--accent);
+      flex-shrink: 0;
+      width: 2rem;
+      line-height: 1;
+      padding-top: 2px;
+    }
+
+    .p-step-body h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 0.4rem;
+    }
+
+    .p-step-body p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    .p-step-body ul {
+      padding-left: 1rem;
+      margin: 0.5rem 0 0;
+    }
+
+    .p-step-body li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+      font-weight: 300;
+    }
+
+    /* ── CHECKLIST ─────────────────────────────────────────── */
+    .p-checklist { list-style: none; padding: 0; margin: 1rem 0; }
+
+    .p-checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      padding: 0.45rem 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      font-weight: 300;
+    }
+
+    .p-checklist li:last-child { border-bottom: none; }
+    .p-check { color: var(--green); font-weight: 700; flex-shrink: 0; padding-top: 1px; }
+
+    /* ── CTA BLOCK ─────────────────────────────────────────── */
+    .p-cta {
+      background: var(--surface2);
+      border: 1px solid var(--border2);
+      border-radius: 18px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .p-cta h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text);
+      margin: 0 0 0.6rem;
+      border: none;
+      padding: 0;
+    }
+
+    .p-cta p {
+      color: var(--muted);
+      font-weight: 300;
+      margin-bottom: 1.75rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .p-actions {
+      display: flex;
+      gap: 0.85rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-p {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.8rem 1.6rem;
+      border-radius: 10px;
+      font-weight: 500;
+      font-size: 0.93rem;
+      transition: transform 0.15s, opacity 0.15s;
+      text-decoration: none;
+    }
+
+    .btn-p:hover { transform: translateY(-1px); opacity: 0.9; color: #fff; }
+
+    .btn-o {
+      display: inline-block;
+      background: transparent;
+      color: var(--text);
+      padding: 0.8rem 1.6rem;
+      border-radius: 10px;
+      font-weight: 400;
+      font-size: 0.93rem;
+      border: 1px solid var(--border2);
+      transition: background 0.15s;
+      text-decoration: none;
+    }
+
+    .btn-o:hover { background: rgba(255,255,255,0.05); color: var(--text); }
+
+    .p-contact-row {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .p-contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .p-contact-link:hover { color: var(--text); }
+    .p-contact-icon { color: var(--accent-light); }
+
+    /* ── FOOTER ────────────────────────────────────────────── */
+    .l-footer {
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      line-height: 1.9;
+    }
+
+    .l-footer a { color: var(--accent-light); }
+    .l-footer a:hover { color: var(--text); }
+
+    @media (max-width: 540px) {
+      .p-header { padding: 2rem 1.25rem 1.75rem; }
+      .p-content { padding: 2rem 1.25rem 3rem; }
+      .p-cta { padding: 2rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="l-nav">
+    <a class="l-nav-logo" href="{{ '/' | relative_url }}">NRV <span>Managed IT</span></a>
+    <button class="l-nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="l-nav-links" id="navLinks">
+      <li><a href="{{ '/services' | relative_url }}"{% if page.url contains 'services' %} class="active"{% endif %}>Services</a></li>
+      <li><a href="{{ '/how-much-does-it-cost' | relative_url }}"{% if page.url contains 'cost' %} class="active"{% endif %}>Pricing</a></li>
+      <li><a href="{{ '/who-we-are' | relative_url }}"{% if page.url contains 'who' %} class="active"{% endif %}>About</a></li>
+      <li><a href="{{ '/contact' | relative_url }}"{% if page.url contains 'contact' %} class="active"{% endif %}>Contact</a></li>
+      <li><a href="{{ '/it-audit' | relative_url }}" class="l-nav-cta">Free IT Audit</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="p-header">
+    {% if page.label %}<p class="p-label">{{ page.label }}</p>{% endif %}
+    <h1>{{ page.title }}</h1>
+    {% if page.subtitle %}<p class="p-header-sub">{{ page.subtitle }}</p>{% endif %}
+  </div>
+
+  <!-- CONTENT -->
+  <div class="p-content">
+    {{ content }}
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="l-footer">
+    <p>© {{ site.time | date: '%Y' }} NRV Managed IT &nbsp;·&nbsp; Ben Linkous &nbsp;·&nbsp; Serving the New River Valley</p>
+    <p style="margin-top:0.4rem;">
+      <a href="{{ '/services' | relative_url }}">Services</a> &nbsp;·&nbsp;
+      <a href="{{ '/how-much-does-it-cost' | relative_url }}">Pricing</a> &nbsp;·&nbsp;
+      <a href="{{ '/who-we-are' | relative_url }}">About</a> &nbsp;·&nbsp;
+      <a href="{{ '/contact' | relative_url }}">Contact</a> &nbsp;·&nbsp;
+      <a href="{{ '/it-audit' | relative_url }}">Free IT Audit</a>
+    </p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links  = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => links.classList.toggle('open'));
+  </script>
+
+</body>
+</html>
