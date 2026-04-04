@@ -1,9 +1,21 @@
-# SSH keys
-keypair
-keypair.pub
-*.pem
-*.key
-.obsidian/
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Obsidian
 .obsidian/
 .trash/
-.obsidian/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# SSH / secrets
+*.pem
+*.key
+keypair
+keypair.pub
+nrvmanagedit-new/
+nrvmanagedit-updated.zip
