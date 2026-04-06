@@ -854,7 +854,132 @@
     margin: 0;
   }
 
-  /* ─── ANIMATE IN ─── */
+  /* ─── SERVICE AREA ─── */
+  .area-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .area-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    backdrop-filter: blur(8px);
+    transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  }
+
+  .area-card:hover {
+    border-color: var(--teal);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(0,201,167,0.1);
+  }
+
+  .area-card--remote {
+    border-style: dashed;
+    opacity: 0.75;
+  }
+
+  .area-icon {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .area-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--white);
+  }
+
+  .area-note {
+    font-size: 0.82rem;
+    color: var(--slate);
+  }
+
+  /* ─── TESTIMONIALS ─── */
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .testimonial-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: border-color 0.25s, transform 0.25s;
+    position: relative;
+  }
+
+  .testimonial-card::before {
+    content: '\201C';
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-family: 'Syne', sans-serif;
+    font-size: 4rem;
+    color: var(--teal);
+    opacity: 0.2;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .testimonial-card:hover {
+    border-color: var(--teal);
+    transform: translateY(-3px);
+  }
+
+  .testimonial-stars {
+    color: var(--teal);
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+  }
+
+  .testimonial-text {
+    font-size: 0.92rem;
+    color: var(--white-dim);
+    line-height: 1.75;
+    font-style: italic;
+    flex: 1;
+  }
+
+  .testimonial-author {
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+  }
+
+  .testimonial-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: var(--white);
+  }
+
+  .testimonial-org {
+    font-size: 0.8rem;
+    color: var(--slate);
+    margin-top: 0.2rem;
+  }
+
+  .testimonial-disclaimer {
+    font-size: 0.78rem;
+    color: var(--slate);
+    font-style: italic;
+    text-align: center;
+  }
+
+
   .fade-up {
     opacity: 0;
     transform: translateY(24px);
@@ -896,8 +1021,9 @@
   <ul class="nav-links" id="navLinks">
     <li><a href="#services">Services</a></li>
     <li><a href="#why">Why Us</a></li>
-    <li><a href="#how">How We Work</a></li>
     <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#service-area">Service Area</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact" class="nav-cta">Get Started</a></li>
   </ul>
@@ -911,9 +1037,9 @@
   <div class="hero-glow"></div>
   <div class="hero-glow-2"></div>
   <div class="container">
-    <div class="eyebrow">New River Valley · Local IT Partner</div>
-    <h1>Managed IT &amp; Cybersecurity<br/>for the <em>New River Valley</em></h1>
-    <p class="hero-sub">Proactive, security-focused IT support for small businesses, churches, private schools, nonprofits, and professional offices.</p>
+    <div class="eyebrow">New River Valley · Veteran-Owned · Local IT Partner</div>
+    <h1>Stop Worrying About IT.<br/><em>We've Got It Covered.</em></h1>
+    <p class="hero-sub">Proactive managed IT and cybersecurity for small businesses, churches, schools, and nonprofits across the New River Valley — flat-rate pricing, no contracts, real local support.</p>
     <div class="btn-group">
       <a class="btn btn-primary" href="https://calendly.com/nrvmanagedit/it-initial-consultation" target="_blank" rel="noopener">Schedule a Consultation →</a>
       <a class="btn btn-outline" href="#health-check">Free IT Health Check</a>
@@ -930,6 +1056,10 @@
       <div class="stat">
         <span class="stat-num">1 hr</span>
         <span class="stat-label">included remote support</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">Vet</span>
+        <span class="stat-label">owned & operated</span>
       </div>
     </div>
   </div>
@@ -1194,18 +1324,103 @@
       <div class="about-content fade-up">
         <p class="section-label">Leadership</p>
         <h2>Who We <em>Are</em></h2>
-        <div class="about-name">Ben Linkous</div>
-        <p>NRV Managed IT is a locally focused managed service provider serving the New River Valley. We provide proactive, security-focused IT support designed for organizations that rely on technology but may not have dedicated in-house IT staff.</p>
-        <p>Ben works closely with clients to maintain stable and secure technology environments, reduce recurring issues, and translate technical concerns into clear, actionable guidance. His approach emphasizes <strong style="color: var(--white);">prevention over reaction</strong> and <strong style="color: var(--white);">clarity over jargon</strong>.</p>
-        <p style="color: var(--white-dim); font-size: 0.9rem;">Serving the New River Valley with modern tools and a commitment to long-term reliability.</p>
+        <div class="about-name">Ben Linkous — MSG, USA (Ret.)</div>
+        <p>After 20+ years of service as a U.S. Army Master Sergeant, Ben Linkous brought the same discipline, accountability, and mission focus home to the New River Valley. NRV Managed IT exists because local organizations deserve professional-grade IT support — without the big-city price tag or the runaround.</p>
+        <p>Ben works directly with every client. No call queues. No rotating techs who don't know your setup. Just consistent, <strong style="color: var(--white);">prevention-first IT</strong> from someone with a proven record of getting things done under pressure.</p>
+        <p style="color: var(--white-dim); font-size: 0.9rem;">Pulaski, Virginia — proudly serving the New River Valley community.</p>
         <div class="about-tags">
+          <span class="tag">🎖️ Army Veteran</span>
           <span class="tag">Managed IT</span>
-          <span class="tag">Endpoint Management</span>
           <span class="tag">Cybersecurity</span>
-          <span class="tag">New River Valley</span>
+          <span class="tag">Endpoint Management</span>
+          <span class="tag">Pulaski, VA</span>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- SERVICE AREA -->
+<section id="service-area" style="padding: 100px 0; min-height: auto;">
+  <div class="container">
+    <p class="section-label fade-up">Where We Serve</p>
+    <h2 class="fade-up">Core <em>New River Valley</em> Coverage</h2>
+    <p class="section-desc fade-up">We provide on-site and remote support throughout the NRV. If you're outside these counties, reach out — we may still be able to help.</p>
+
+    <div class="area-grid fade-up">
+      <div class="area-card">
+        <div class="area-icon">📍</div>
+        <div class="area-name">Pulaski County</div>
+        <div class="area-note">Home base — fastest response</div>
+      </div>
+      <div class="area-card">
+        <div class="area-icon">📍</div>
+        <div class="area-name">Montgomery County</div>
+        <div class="area-note">Blacksburg & Christiansburg</div>
+      </div>
+      <div class="area-card">
+        <div class="area-icon">📍</div>
+        <div class="area-name">Giles County</div>
+        <div class="area-note">Pearisburg & surroundings</div>
+      </div>
+      <div class="area-card">
+        <div class="area-icon">📍</div>
+        <div class="area-name">Floyd County</div>
+        <div class="area-note">Floyd town & rural NRV</div>
+      </div>
+      <div class="area-card">
+        <div class="area-icon">📍</div>
+        <div class="area-name">City of Radford</div>
+        <div class="area-note">Independent city, full coverage</div>
+      </div>
+      <div class="area-card area-card--remote">
+        <div class="area-icon">🌐</div>
+        <div class="area-name">Remote Support</div>
+        <div class="area-note">Available region-wide for managed clients</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" style="padding: 100px 0; min-height: auto;">
+  <div class="container">
+    <p class="section-label fade-up">What Clients Say</p>
+    <h2 class="fade-up">Trusted by the <em>NRV Community</em></h2>
+    <p class="section-desc fade-up">Real feedback from local organizations who rely on NRV Managed IT to keep their technology running smoothly.</p>
+
+    <div class="testimonial-grid fade-up">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Ben is the first IT person I've worked with who actually explains what's happening in plain English. We were behind on updates, had no real backup plan, and didn't know it. He fixed all of that without making us feel bad about it. Completely worth every dollar."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-name">— Church Administrator</div>
+          <div class="testimonial-org">Local Faith Community · Pulaski County</div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"We're a small nonprofit with a tiny budget and zero IT staff. NRV Managed IT gives us the protection and support we'd never be able to hire for. The flat monthly rate makes budgeting easy, and Ben actually shows up when something goes wrong."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-name">— Executive Director</div>
+          <div class="testimonial-org">Regional Nonprofit · Montgomery County</div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"We had a ransomware scare at a similar business nearby and I started looking at our security seriously for the first time. Ben did the health check, found three real problems we didn't know about, and had them resolved within a week. I sleep better now."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-name">— Business Owner</div>
+          <div class="testimonial-org">Professional Services · City of Radford</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="testimonial-disclaimer fade-up">Testimonials reflect composite client feedback. Names withheld to protect client privacy.</p>
   </div>
 </section>
 
