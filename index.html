@@ -980,6 +980,45 @@
   }
 
 
+  /* ─── FOUNDING BANNER ─── */
+  .founding-banner {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 200;
+    background: linear-gradient(90deg, #003d2e, #005a42, #003d2e);
+    border-bottom: 1px solid rgba(0,201,167,0.4);
+    padding: 0.5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-size: 0.82rem;
+    color: var(--white);
+    text-align: center;
+    flex-wrap: wrap;
+  }
+  .founding-badge {
+    background: var(--teal);
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 0.72rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+    white-space: nowrap;
+    letter-spacing: 0.04em;
+  }
+  .founding-text { color: rgba(240,244,255,0.9); }
+  .founding-text strong { color: var(--white); }
+  .founding-text a { color: var(--teal); text-decoration: none; font-weight: 500; }
+  .founding-text a:hover { text-decoration: underline; }
+  nav { top: 36px; }
+  #home { padding-top: 156px; }
+  @media (max-width: 600px) {
+    .founding-banner { font-size: 0.76rem; padding: 0.5rem 1rem; }
+    nav { top: 52px; }
+    #home { padding-top: 172px; }
+  }
+
   .fade-up {
     opacity: 0;
     transform: translateY(24px);
@@ -1014,6 +1053,12 @@
 </style>
 </head>
 <body>
+
+<!-- FOUNDING CLIENT BANNER -->
+<div class="founding-banner">
+  <span class="founding-badge">⚡ Limited Offer</span>
+  <span class="founding-text">Founding Client Special — <strong>$100 flat onboarding</strong> + $35/endpoint/mo starting April 2025. No contract. <a href="/founding-client.html">See the details →</a></span>
+</div>
 
 <!-- NAV -->
 <nav>
